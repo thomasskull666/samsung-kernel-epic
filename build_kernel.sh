@@ -3,7 +3,7 @@
 # Defaults
 BUILD_KERNEL=y
 CLEAN=n
-CROSS_COMPILE="$PWD/../arm-2010q1/bin/arm-none-eabi-"
+CROSS_COMPILE="armv7a-unknown-linux-gnueabi-"
 DEFCONFIG=n
 MKZIP='7z -mx9 -mmt=1 a "$OUTFILE" .'
 PRODUCE_TAR=n
