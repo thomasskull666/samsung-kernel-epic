@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Defaults
 BUILD_KERNEL=y
