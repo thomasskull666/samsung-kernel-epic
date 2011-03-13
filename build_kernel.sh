@@ -3,13 +3,13 @@
 # Defaults
 BUILD_KERNEL=y
 CLEAN=n
-CROSS_COMPILE="armv7a-unknown-linux-gnueabi-"
+CROSS_COMPILE="/home/justin/arm-2010.09/bin/arm-none-eabi-"
 DEFCONFIG=n
 MKZIP='7z -mx9 -mmt=1 a "$OUTFILE" .'
 PRODUCE_TAR=n
 PRODUCE_ZIP=n
 TARGET="victory_03"
-THREADS=2
+THREADS=6
 VERSION=$(date +%m%d%Y)
 
 SHOW_HELP()
@@ -80,11 +80,10 @@ fi
 if [ "$PRODUCE_ZIP" = y ] ; then
 	echo "Generating $TARGET-$VERSION.zip for flashing as update.zip" && echo ""
 	rm -fr "$TARGET-$VERSION.zip"
-	rm -f update/kernel_update/zImage
-	cp arch/arm/boot/zImage update/kernel_update
+	rm -f update/kernel/zImage
+	cp arch/arm/boot/zImage update/kernel
 	OUTFILE="$PWD/$TARGET-$VERSION.zip"
-	cd update
+	pushd update
 	eval "$MKZIP" >/dev/null 2>&1
-	cd ..
-	mv $"OUTFILE"-signed "$OUTFILE"
+	popd
 fi
