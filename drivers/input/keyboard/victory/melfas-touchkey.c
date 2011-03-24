@@ -412,7 +412,7 @@ static void init_hw(void)
 	msleep(100);
         s3c_gpio_setpull(_3_GPIO_TOUCH_INT, S3C_GPIO_PULL_NONE);
         set_irq_type(IRQ_TOUCH_INT, IRQ_TYPE_LEVEL_LOW);
-        s3c_gpio_cfgpin(_3_GPIO_TOUCH_INT,, S3C_GPIO_SFN(0xf));
+        s3c_gpio_cfgpin(_3_GPIO_TOUCH_INT, S3C_GPIO_SFN(0xf));
 }
 
 
