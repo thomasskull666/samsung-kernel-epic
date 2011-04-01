@@ -8,7 +8,7 @@ DEFCONFIG=n
 MKZIP='7z -mx9 -mmt=1 a "$OUTFILE" .'
 PRODUCE_TAR=n
 PRODUCE_ZIP=n
-TARGET="victory_03"
+TARGET="cyanogen_epic"
 THREADS=$(expr 1 + $(grep processor /proc/cpuinfo | wc -l))
 VERSION=$(date +%m%d%Y)
 
